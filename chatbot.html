@@ -21,25 +21,32 @@
   </>
 )
  }
- function ChatMessage(props)
+ function ChatMessage({message,sender})
  {
-const message= props.message;
-const sender=props.sender;
-if(sender==='robot')
-{
-return(
-<div>
-  <img src="robot.png" width="50"/>
-    {message}
-</div>
-);
+// const message= props.message;
+// const sender=props.sender;
+//shortcut
+// const{message,sender}=props;//destruturing
 
-}
+// if(sender==='robot')
+// {
+// return(
+// <div>
+  
+//   <img src="robot.png" width="50"/>
+//     {message}
+// </div>
+// );
+
+// }
 
   return(
 <div>
+  {sender==='robot'&& <img src="robot.png" width="50"/>}
+
     {message}
-  <img src="user.png" width="50"/>
+     {sender==='user'&& <img src="user.png" width="50"/>}
+ 
 
 </div>
   );
