@@ -14,26 +14,55 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
 
-  function App()
-  {
-    return(
-      <>
-         <p>Hello,welcome to my website</p>
-         <button>login</button>
-         <button>signup</button>
-      </>
-    );
-  }
+// function LoginForm()
+// {
+//   return(
+//     <>
+// <input type="text" placeholder="email"/>
+//          <br/>
+//          <input type="password" placeholder="password"/>
+//          <br/>
+//          <button>login</button>
+//          <button>signup</button>
+//     </>
+//   )
+// }
 
-  const app=(
+//   function App()
+//   {
+//     return(
+//       <>
+//          <p>Hello,welcome to my website</p>
+         
+//       </>
+//     );
+//   }
+
+//   const app=(
+//     <>
+//    <App></App>
+//    <LoginForm/>
+//    </>
+//   )
+
+function App(props){
+  const product=props.product;
+  const price=props.price;
+  return(
     <>
-   <App></App>
-   <App></App>
-   <App></App>
-   <App></App>
-   <App></App>
-   </>
+    <p>2e</p>
+    <p>{product}</p>
+    <p>{price}</p>
+    <button>ADD TO CART</button>
+    
+
+    </>
   )
+}
+
+const app=(
+  <App product="tennis ball" price="$6.00" />
+)
   
   
 
