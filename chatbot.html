@@ -56,9 +56,10 @@
 </div>
   );
  }
- function App()
- {
-  const ChatMessages=[{
+
+function ChatMessages()
+{
+   const ChatMessages=[{
     message:'hello chatbot',
     sender:'user',
     id:'id1'
@@ -74,26 +75,40 @@
   },{
      message:"Today is August 20",
       sender:"robot",
-    id:'id4'
-  }];
+      id:'id4'
+    }];
+    function sendMessage()
+    {
+      console.log('send message');
+    }
+    return(
+      <>
+      <button onClick={sendMessage}>send message</button>
+    {ChatMessages.map((chatMessage)=>{
+    return(
+          <ChatMessage 
+          message={chatMessage.message}
+          sender={chatMessage.sender}
+          key={chatMessage.id}
+          />
+    )
+    })}
+    </>
+  );
+}
+
+
+ function App()
+ {
  
-
-
+ 
   return(
      <> 
       
          
         <ChatInput/>
-        {ChatMessages.map((chatMessage)=>{
-  return(
-        <ChatMessage 
-        message={chatMessage.message}
-        sender={chatMessage.sender}
-        key={chatMessage.id}
-        />
-  )
-  })}
-        
+       
+        <ChatMessages/>
       </>
 
   );
