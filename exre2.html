@@ -48,20 +48,31 @@
 function App(props){
   const product=props.product;
   const price=props.price;
+  const discountprice=props.discountprice;
+  const imgsrc=props.imgsrc;
   return(
     <>
     <p>2e</p>
-    <p>{product}</p>
-    <p>{price}</p>
-    <button>ADD TO CART</button>
-    
+    <img src={imgsrc} width="100" />
+    <p>Product:{product}</p>
+    {discountprice?<del><p>price:{price}</p> </del>:<p>price:{price}</p>}
 
-    </>
+    
+    {product ==="cotton socks"  &&(
+    <p>Discount price:{discountprice}</p>)}
+    <button>ADD TO CART</button>
+      </>
   )
+   
+
 }
 
 const app=(
-  <App product="tennis ball" price="$6.00" />
+  <>
+  <App product="tennis ball" price="$6.00" imgsrc="adults-plain-cotton-tshirt-2-pack-teal.jpg"/>
+  <App product="plain Tshirt" price="$7.99"imgsrc="adults-plain-cotton-tshirt-2-pack-teal.jpg" />
+   <App product="cotton socks" price="$10.90"discountprice="$5.45" imgsrc="athletic-cotton-socks-6-pairs.jpg" />
+  </>
 )
   
   
