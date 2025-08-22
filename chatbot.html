@@ -60,17 +60,21 @@
  {
   const ChatMessages=[{
     message:'hello chatbot',
-    sender:'user'
+    sender:'user',
+    id:'id1'
   },{
     message:"Hello! How can I help you?" ,
-    sender:"robot"
+    sender:"robot",
+    id:'id2'
   },{
     message:"can you get me today date",
-     sender:"user"
+     sender:"user",
+    id:'id3'
 
   },{
      message:"Today is August 20",
-      sender:"robot"
+      sender:"robot",
+    id:'id4'
   }];
  
 
@@ -85,6 +89,7 @@
         <ChatMessage 
         message={chatMessage.message}
         sender={chatMessage.sender}
+        key={chatMessage.id}
         />
   )
   })}
