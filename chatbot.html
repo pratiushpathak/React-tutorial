@@ -56,9 +56,10 @@
 </div>
   );
  }
-    
-    const app=(
-      <> 
+ function App()
+ {
+  return(
+     <> 
       
          
         
@@ -78,11 +79,15 @@
           message="Today is August 20" sender="robot" 
           />
       </>
-    );
+
+  );
+ }
+    
+    
 
 
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(app);
+      ReactDOM.createRoot(container).render(<App/>);
     </script>
   </body>
 </html>
