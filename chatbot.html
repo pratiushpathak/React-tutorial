@@ -24,7 +24,16 @@
 
   function sendMessage()
   {
-   console.log(inputText)
+  
+   setChatMessages(
+        [
+          ...chatMessages,{
+            message:'test',
+            sender:'user',
+            id:crypto.randomUUID()
+          }
+        ]
+      )
   }
 
   return (
@@ -74,7 +83,33 @@
 
 function ChatMessages()
 {
- const [chatMessages,setChatMessages]= React.useState(
+
+
+
+  
+
+
+    return(
+      <>
+    
+    {chatMessages.map((chatMessage)=>{
+    return(
+          <ChatMessage 
+          message={chatMessage.message}
+          sender={chatMessage.sender}
+          key={chatMessage.id}
+          />
+    )
+    })}
+    </>
+  );
+}
+
+
+ function App()
+ {
+
+   const [chatMessages,setChatMessages]= React.useState(
 
     [{
     message:'hello chatbot',
@@ -97,42 +132,6 @@ function ChatMessages()
 // const [chatMessages,setChatMessages]=array
 //  const chatMessages= array[0]; //current data
 //  const setChatMessages=array[1]//updater function
-
-
-  
-
-    function sendMessage()
-    {
-      setChatMessages(
-        [
-          ...chatMessages,{
-            message:'test',
-            sender:'user',
-            id:crypto.randomUUID()
-          }
-        ]
-      )
-    }
-
-    return(
-      <>
-      <button onClick={sendMessage}>send message</button>
-    {chatMessages.map((chatMessage)=>{
-    return(
-          <ChatMessage 
-          message={chatMessage.message}
-          sender={chatMessage.sender}
-          key={chatMessage.id}
-          />
-    )
-    })}
-    </>
-  );
-}
-
-
- function App()
- {
  
  
   return(
