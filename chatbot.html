@@ -14,7 +14,7 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
 
- function ChatInput(){
+ function ChatInput({chatMessages,setChatMessages}){
  const [inputText,setInputText]= React.useState('');
 
   function saveInputText(event){
@@ -81,7 +81,7 @@
   );
  }
 
-function ChatMessages()
+function ChatMessages({chatMessages})
 {
 
 
@@ -138,9 +138,14 @@ function ChatMessages()
      <> 
       
          
-        <ChatInput/>
+        <ChatInput
+        chatMessages={chatMessages}
+        setChatMessages={setChatMessages}
+        />
        
-        <ChatMessages/>
+        <ChatMessages
+        chatMessages={chatMessages}
+        />
       </>
 
   );
