@@ -15,12 +15,27 @@
     <script type="text/babel">
 
  function ChatInput(){
+ const [inputText,setInputText]= React.useState('');
+
+  function saveInputText(event){
+   setInputText( event.target.value)
+
+  }
+
+  function sendMessage()
+  {
+   console.log(inputText)
+  }
+
   return (
   <>
      <input 
       placeholder="Send A message to chatbot"     size="30"
+      onChange={saveInputText}
      /> 
-     <button>Send </button>
+     <button
+     onClick={sendMessage}
+     >Send </button>
   </>
 )
  }
