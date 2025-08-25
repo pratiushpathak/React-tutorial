@@ -46,17 +46,21 @@
 //   )
 
 function App(){
- function updateCounter()
+ const[count,setcount]= React.useState(0)
+ 
+ 
+ 
+ function incriment()
  {
-  
-console.log('clicked');
-  
-
+setcount(count+1);
  }
+
 
   return(
     <>
-<button onClick={updateCounter}>click</button>
+   <h2>Counter: {count}</h2>
+<button onClick={incriment}>clicked {count} times</button>
+
 </>
   )
    
