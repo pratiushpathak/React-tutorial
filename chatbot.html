@@ -29,8 +29,11 @@
   {
     sendMessage();
   }
- 
+      if (e.key === "Escape") {
+      setInputText("")
 
+
+      }
   }
 
   function sendMessage()
@@ -64,6 +67,8 @@
      <input 
       placeholder="Send A message to chatbot"     size="30"
       onChange={saveInputText}
+     
+
       onKeyDown={sendMessageenter}
       value={inputText}
      /> 
