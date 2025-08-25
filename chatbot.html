@@ -23,6 +23,15 @@
    setInputText( event.target.value)
 
   }
+  function sendMessageenter(e)
+  {
+    if(e.key==='Enter')
+  {
+    sendMessage();
+  }
+ 
+
+  }
 
   function sendMessage()
   {
@@ -55,9 +64,11 @@
      <input 
       placeholder="Send A message to chatbot"     size="30"
       onChange={saveInputText}
+      onKeyDown={sendMessageenter}
       value={inputText}
      /> 
      <button
+     
      onClick={sendMessage}
      >Send </button>
   </>

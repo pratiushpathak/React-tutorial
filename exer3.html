@@ -14,55 +14,80 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
 
-// function LoginForm()
+
+// function Counter({count,setcount})
 // {
+
+ 
+ 
+ 
+//  function incriment({})
+//  {
+// setcount(count+1);
+//  }
+//  function reset()
+//  {
+//   setcount(0);
+//  }
 //   return(
 //     <>
-// <input type="text" placeholder="email"/>
-//          <br/>
-//          <input type="password" placeholder="password"/>
-//          <br/>
-//          <button>login</button>
-//          <button>signup</button>
-//     </>
+//    <h2>Counter: {count}</h2>
+// <button onClick={incriment}>clicked {count} times</button>
+// <button onClick={reset}>Reset</button>
+
+// </>
 //   )
+
 // }
 
-//   function App()
-//   {
-//     return(
-//       <>
-//          <p>Hello,welcome to my website</p>
-         
-//       </>
-//     );
-//   }
-
-//   const app=(
+// function App(){
+//      const array=React.useState(0)
+// //  const[count,setcount]= React.useState(0)
+// let count=array[0];
+// let setcount=array[1];
+//   return(
 //     <>
-//    <App></App>
-//    <LoginForm/>
-//    </>
+// <Counter count={count} setcount={setcount} />
+// <Counter count={count} setcount={setcount}/>
+// </>
 //   )
+function Input(){
+ const[ivalue,setvalue]= React.useState("");
+  function value(e){
+    setvalue(e.target.value)
 
-function App(){
- const[count,setcount]= React.useState(0)
- 
- 
- 
- function incriment()
- {
-setcount(count+1);
- }
-
-
+  }
+  function reset(){
+    setvalue("");
+  }
+  function example()
+  {
+    setvalue("Pratiush")
+  
+  }
   return(
     <>
-   <h2>Counter: {count}</h2>
-<button onClick={incriment}>clicked {count} times</button>
-
-</>
+    <input onChange={value} value={ivalue} type="text"/>
+    <p>{ivalue}</p>
+    <button onClick={reset}>reset</button>
+    <button onClick={example}>Example</button>
+    </>
   )
+}
+
+function App()
+{
+  return(
+    <>
+    <Input/>
+    </>
+
+  )
+}
+ 
+
+
+ 
    
   
 
@@ -71,7 +96,7 @@ setcount(count+1);
   
    
 
-}
+
 
 const app=(
   <>
