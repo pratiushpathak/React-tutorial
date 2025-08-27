@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <style>
+    .btn{
+      background-color: rgb(25,135,84);
+      padding: 10px 15px;
+      border: 0;
+      border-radius: 5px;
+      color: white;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .btno{
+      background-color: red;
+    }
+    .email
+    {
+      padding: 7px 15px;
+      margin-bottom: 10px;
+      border: 0;
+      box-shadow: 1px 1px 1px 1px;
+      border-radius: 5px;
+    }
+    .pass{
+        padding: 7px 15px;
+      margin-bottom: 10px;
+       border: 0;
+      box-shadow: 1px 1px 1px 1px;
+      border-radius: 5px;
+    }
+    .lbtn{
+      background-color: blue;
+      color: aliceblue;
+      padding: 9px 10px;
+      border: 0;
+     margin-right: 5px;
+     border-radius: 5px;
+    }
+    .sbtn
+    {
+      background-color: blue;
+      color: aliceblue;
+      padding: 9px 10px;
+      border: 0;
+     margin-right: 5px;
+     border-radius: 5px;
+
+    }
+
+  </style>
+  <body>
+    <div class="js-container"></div>
+    
+
+<script src="https://unpkg.com/supersimpledev@8.6.4/dayjs.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+
+
+
+// function App()
+// {
+//   const[btn,setBtn]=React.useState(true)
+//   function off()
+//   {
+//     setBtn(false)
+//   }
+//   function toggle()
+//   {
+//     setBtn(!btn)
+//   }
+
+
+//   return(
+//     <>
+//     <button onClick={toggle} className={btn?"btn":"btno"}>{btn ? "ON" : "OFF"}</button>
+//     </>
+
+//   )
+  
+// }
+function App()
+
+{
+
+
+  const[pass,setPass]=React.useState(false)
+  function show()
+  {
+    setPass(true)
+  }
+
+  return(
+    <div>
+    <h1>Hello, welcome to my website</h1>
+    <input className="email" type="text" placeholder="Email"/>
+    <br/>
+    <input className="pass" type={pass?"text":"password"}placeholder="password"/>
+    <button onClick={show}>show</button>
+    <br/>
+    <button className="lbtn">login</button>
+    <button className="sbtn">sighnup</button>
+
+    </div>
+  )
+}
+ 
+
+
+ 
+   
+  
+
+
+      
+  
+   
+
+
+
+const app=(
+  <>
+<App/>
+
+  </>
+)
+  
+  
+
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(app);
+
+      
+    </script>
+  </body>
+</html>
