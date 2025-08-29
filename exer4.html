@@ -64,7 +64,6 @@
 
 
 
-
 // function App()
 // {
 //   const[btn,setBtn]=React.useState(true)
@@ -86,32 +85,52 @@
 //   )
   
 // }
-function App()
+// function App()
 
-{
+// {
 
 
-  const[pass,setPass]=React.useState(false)
-  function show()
+//   const[pass,setPass]=React.useState(false)
+//   function show()
+//   {
+//     setPass(true)
+//   }
+
+//   return(
+//     <div>
+//     <h1>Hello, welcome to my website</h1>
+//     <input className="email" type="text" placeholder="Email"/>
+//     <br/>
+//     <input className="pass" type={pass?"text":"password"}placeholder="password"/>
+//     <button onClick={show}>show</button>
+//     <br/>
+//     <button className="lbtn">login</button>
+//     <button className="sbtn">sighnup</button>
+
+//     </div>
+//   )
+// }
+ 
+function App(){
+  const[time,settime]=React.useState("")
+  
+  
+  function gettime()
   {
-    setPass(true)
+    
+    setInterval(() => {
+      settime(dayjs().format('HH:mm:ss'));
+    }, 1000);
+    
   }
 
   return(
-    <div>
-    <h1>Hello, welcome to my website</h1>
-    <input className="email" type="text" placeholder="Email"/>
-    <br/>
-    <input className="pass" type={pass?"text":"password"}placeholder="password"/>
-    <button onClick={show}>show</button>
-    <br/>
-    <button className="lbtn">login</button>
-    <button className="sbtn">sighnup</button>
-
-    </div>
+    <>
+<p>time:{time}</p>
+<button  onClick={gettime}>time is  </button>
+    </>
   )
 }
- 
 
 
  
