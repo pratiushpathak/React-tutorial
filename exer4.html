@@ -111,18 +111,19 @@
 //   )
 // }
  
-function App(){
-  const[time,settime]=React.useState("")
+// function App(){
+//   const[time,settime]=React.useState("")
 
-  React.useEffect(function gettime(){
-  setInterval(() => {
-      let a=dayjs().format('HH:mm:ss')
-      settime(a);
-    }, 1000);
+//   React.useEffect(function gettime(){
+//   setInterval(() => {
+//       let a=dayjs().format('HH:mm:ss')
+//       settime(a);
+//       // console.log('run code');
+//     }, 1000);
     
 
     
-  })
+//   })
   
   // function gettime()
   // {
@@ -134,15 +135,52 @@ function App(){
     
   // }
 
+//   return(
+//     <>
+// <p>time:{time}</p>
+
+//     </>
+//   )
+// }
+
+
+function App()
+{
+const[count,setcount]=React.useState(0);
+const click=React.useRef(null)
+const buttonRef=React.useRef(null)
+function update()
+{
+  setcount(count+1);
+}
+function reset()
+{
+  clearInterval(click.current);
+  setcount(0);
+}
+function autocllick()
+{
+ click.current=setInterval(() => {
+  
+  buttonRef.current.click();
+ }, 1000);
+
+}
+
+
+
   return(
     <>
-<p>time:{time}</p>
+    <p>{count}</p>
+      <button ref={buttonRef} onClick={update}>
+        clicked {count} time
+      </button>
+      <button onClick={reset}>reset</button>
+      <button onClick={autocllick}>autoclick</button>
 
     </>
   )
 }
-
-
  
    
   
