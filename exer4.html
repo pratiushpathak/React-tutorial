@@ -113,21 +113,31 @@
  
 function App(){
   const[time,settime]=React.useState("")
-  
-  
-  function gettime()
-  {
-    
-    setInterval(() => {
-      settime(dayjs().format('HH:mm:ss'));
+
+  React.useEffect(function gettime(){
+  setInterval(() => {
+      let a=dayjs().format('HH:mm:ss')
+      settime(a);
     }, 1000);
     
-  }
+
+    
+  })
+  
+  // function gettime()
+  // {
+    
+  //   setInterval(() => {
+  //     let a=dayjs().format('HH:mm:ss')
+  //     settime(a);
+  //   }, 1000);
+    
+  // }
 
   return(
     <>
 <p>time:{time}</p>
-<button  onClick={gettime}>time is  </button>
+
     </>
   )
 }
