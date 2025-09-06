@@ -1,0 +1,33 @@
+.email
+    {
+      padding: 7px 15px;
+      margin-bottom: 10px;
+      border: 0;
+      box-shadow: 1px 1px 1px 1px;
+      border-radius: 5px;
+    }
+    .pass{
+        padding: 7px 15px;
+      margin-bottom: 10px;
+       border: 0;
+      box-shadow: 1px 1px 1px 1px;
+      border-radius: 5px;
+    }
+    .lbtn{
+      background-color: blue;
+      color: aliceblue;
+      padding: 9px 10px;
+      border: 0;
+     margin-right: 5px;
+     border-radius: 5px;
+    }
+    .sbtn
+    {
+      background-color: blue;
+      color: aliceblue;
+      padding: 9px 10px;
+      border: 0;
+     margin-right: 5px;
+     border-radius: 5px;
+
+    }
