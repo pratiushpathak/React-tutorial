@@ -27,6 +27,7 @@ import './ChatMessages.css'
           <ChatMessage 
           message={chatMessage.message}
           sender={chatMessage.sender}
+           time={chatMessage.time}
           key={chatMessage.id}
           />
     )
